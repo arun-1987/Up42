@@ -4,8 +4,9 @@ import com.up42.apireusable.WorkFlowReusable;
 import io.qameta.allure.*;
 import io.restassured.module.jsv.JsonSchemaValidator;
 import io.restassured.response.Response;
+import org.testng.annotations.Optional;
 import org.testng.annotations.Test;
-
+import static org.hamcrest.Matchers.*;
 import static org.assertj.core.api.Assertions.assertThat;
 
 public class WorkflowTest extends BaseTest{
@@ -19,7 +20,8 @@ public class WorkflowTest extends BaseTest{
         WorkFlowReusable workFlowReusable = new WorkFlowReusable();
         Response response = workFlowReusable.createWorkFlow(TestData.getWorkFlowData());
         assertThat(response.getStatusCode()).isEqualTo(200);
-        response.then().assertThat().body(JsonSchemaValidator.matchesJsonSchemaInClasspath("Work_Flow_Schema.json"));
+        response.then().assertThat().body("$",hasValue(nullValue()))
+                .body(JsonSchemaValidator.matchesJsonSchemaInClasspath("Work_Flow_Schema.json"));
          response = workFlowReusable.createWorkFlow(TestData.getWorkFlowDataWithEmptyName());
         assertThat(response.getStatusCode()).isEqualTo(400);
          response = workFlowReusable.createWorkFlow(TestData.getWorkFlowDataWithExpiredToken());
@@ -29,7 +31,7 @@ public class WorkflowTest extends BaseTest{
     }
 
     @Test
-    @Description("Test to verify all the response code and a successful create task scenario")
+    @Description("Test to verify the response code and a successful create task scenario")
     @Severity(SeverityLevel.CRITICAL)
     @Story("POST Request")
     public void createTask(){

@@ -82,7 +82,6 @@ public class WorkFlowReusable {
 
     }
 
-
     public void verifyCreateTaskResponse(Response response){
         response.then().assertThat().statusCode(200)
                 .body(JsonSchemaValidator.matchesJsonSchemaInClasspath("Create_Task_Schema.json"));
@@ -122,10 +121,8 @@ public class WorkFlowReusable {
                 requestSpec.header("Authorization", "Bearer "+accessToken)
                         .header("Content-Type","application/json");
                 Response response = RestAssuredExtensions.getResponse(requestSpec, "GET");
-                System.out.println("((((((((("+response.path("data[0].status").toString());
                 if(response.path("data[0].status").toString().equalsIgnoreCase("SUCCEEDED")){
                     flag = true;
-                    System.out.println("****************** Job Succeeded");
                 }
                 return flag;
             }
@@ -146,20 +143,4 @@ public class WorkFlowReusable {
         Response response = RestAssuredExtensions.getResponse(requestSpec, "GET");
     }
 
-
-    public List<Map<String, Object>> getWorkFlowTaskData(){
-        HashMap<String,Object> firstBlock = new HashMap<>();
-        firstBlock.put("name","first block");
-        firstBlock.put("parentName",null);
-        firstBlock.put("blockId","defb134b-ca00-4e16-afa0-639c6dc0c5fe");
-        HashMap<String,Object> secondBlock = new HashMap<>();
-        secondBlock.put("name","second block");
-        secondBlock.put("parentName","first block");
-        secondBlock.put("blockId","defb134b-ca00-4e16-afa0-639c6dc0c5fe");
-        List<Map<String,Object>> jsonArrayPayload = new ArrayList<>();
-        jsonArrayPayload.add(firstBlock);
-        jsonArrayPayload.add(secondBlock);
-        System.out.println(jsonArrayPayload.toString());
-        return jsonArrayPayload;
-    }
 }
