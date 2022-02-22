@@ -1,0 +1,224 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema",
+  "$id": "http://example.com/example.json",
+  "type": "object",
+  "title": "The root schema",
+  "description": "The root schema comprises the entire JSON document.",
+  "default": {},
+  "examples": [
+    {
+      "data": {
+        "id": "b410a2b1-ac7c-43a0-a621-621d1d926e85",
+        "name": "QA coding challenge workflow",
+        "description": "Workflow description",
+        "createdAt": "2022-02-22T00:55:24.874207Z",
+        "updatedAt": "2022-02-22T00:55:24.874207Z",
+        "createdBy": {
+          "id": "6df09408-ab97-405c-9877-fea014002e8e",
+          "type": "API_KEY"
+        },
+        "updatedBy": {
+          "id": "6df09408-ab97-405c-9877-fea014002e8e",
+          "type": "API_KEY"
+        },
+        "totalProcessingTime": 0
+      },
+      "error": null
+    }
+  ],
+  "required": [
+    "data",
+    "error"
+  ],
+  "properties": {
+    "data": {
+      "$id": "#/properties/data",
+      "type": "object",
+      "title": "The data schema",
+      "description": "An explanation about the purpose of this instance.",
+      "default": {},
+      "examples": [
+        {
+          "id": "b410a2b1-ac7c-43a0-a621-621d1d926e85",
+          "name": "QA coding challenge workflow",
+          "description": "Workflow description",
+          "createdAt": "2022-02-22T00:55:24.874207Z",
+          "updatedAt": "2022-02-22T00:55:24.874207Z",
+          "createdBy": {
+            "id": "6df09408-ab97-405c-9877-fea014002e8e",
+            "type": "API_KEY"
+          },
+          "updatedBy": {
+            "id": "6df09408-ab97-405c-9877-fea014002e8e",
+            "type": "API_KEY"
+          },
+          "totalProcessingTime": 0
+        }
+      ],
+      "required": [
+        "id",
+        "name",
+        "description",
+        "createdAt",
+        "updatedAt",
+        "createdBy",
+        "updatedBy",
+        "totalProcessingTime"
+      ],
+      "properties": {
+        "id": {
+          "$id": "#/properties/data/properties/id",
+          "type": "string",
+          "title": "The id schema",
+          "description": "An explanation about the purpose of this instance.",
+          "default": "",
+          "examples": [
+            "b410a2b1-ac7c-43a0-a621-621d1d926e85"
+          ]
+        },
+        "name": {
+          "$id": "#/properties/data/properties/name",
+          "type": "string",
+          "title": "The name schema",
+          "description": "An explanation about the purpose of this instance.",
+          "default": "",
+          "examples": [
+            "QA coding challenge workflow"
+          ]
+        },
+        "description": {
+          "$id": "#/properties/data/properties/description",
+          "type": "string",
+          "title": "The description schema",
+          "description": "An explanation about the purpose of this instance.",
+          "default": "",
+          "examples": [
+            "Workflow description"
+          ]
+        },
+        "createdAt": {
+          "$id": "#/properties/data/properties/createdAt",
+          "type": "string",
+          "title": "The createdAt schema",
+          "description": "An explanation about the purpose of this instance.",
+          "default": "",
+          "examples": [
+            "2022-02-22T00:55:24.874207Z"
+          ]
+        },
+        "updatedAt": {
+          "$id": "#/properties/data/properties/updatedAt",
+          "type": "string",
+          "title": "The updatedAt schema",
+          "description": "An explanation about the purpose of this instance.",
+          "default": "",
+          "examples": [
+            "2022-02-22T00:55:24.874207Z"
+          ]
+        },
+        "createdBy": {
+          "$id": "#/properties/data/properties/createdBy",
+          "type": "object",
+          "title": "The createdBy schema",
+          "description": "An explanation about the purpose of this instance.",
+          "default": {},
+          "examples": [
+            {
+              "id": "6df09408-ab97-405c-9877-fea014002e8e",
+              "type": "API_KEY"
+            }
+          ],
+          "required": [
+            "id",
+            "type"
+          ],
+          "properties": {
+            "id": {
+              "$id": "#/properties/data/properties/createdBy/properties/id",
+              "type": "string",
+              "title": "The id schema",
+              "description": "An explanation about the purpose of this instance.",
+              "default": "",
+              "examples": [
+                "6df09408-ab97-405c-9877-fea014002e8e"
+              ]
+            },
+            "type": {
+              "$id": "#/properties/data/properties/createdBy/properties/type",
+              "type": "string",
+              "title": "The type schema",
+              "description": "An explanation about the purpose of this instance.",
+              "default": "",
+              "examples": [
+                "API_KEY"
+              ]
+            }
+          },
+          "additionalProperties": true
+        },
+        "updatedBy": {
+          "$id": "#/properties/data/properties/updatedBy",
+          "type": "object",
+          "title": "The updatedBy schema",
+          "description": "An explanation about the purpose of this instance.",
+          "default": {},
+          "examples": [
+            {
+              "id": "6df09408-ab97-405c-9877-fea014002e8e",
+              "type": "API_KEY"
+            }
+          ],
+          "required": [
+            "id",
+            "type"
+          ],
+          "properties": {
+            "id": {
+              "$id": "#/properties/data/properties/updatedBy/properties/id",
+              "type": "string",
+              "title": "The id schema",
+              "description": "An explanation about the purpose of this instance.",
+              "default": "",
+              "examples": [
+                "6df09408-ab97-405c-9877-fea014002e8e"
+              ]
+            },
+            "type": {
+              "$id": "#/properties/data/properties/updatedBy/properties/type",
+              "type": "string",
+              "title": "The type schema",
+              "description": "An explanation about the purpose of this instance.",
+              "default": "",
+              "examples": [
+                "API_KEY"
+              ]
+            }
+          },
+          "additionalProperties": true
+        },
+        "totalProcessingTime": {
+          "$id": "#/properties/data/properties/totalProcessingTime",
+          "type": "integer",
+          "title": "The totalProcessingTime schema",
+          "description": "An explanation about the purpose of this instance.",
+          "default": 0,
+          "examples": [
+            0
+          ]
+        }
+      },
+      "additionalProperties": true
+    },
+    "error": {
+      "$id": "#/properties/error",
+      "type": "null",
+      "title": "The error schema",
+      "description": "An explanation about the purpose of this instance.",
+      "default": null,
+      "examples": [
+        null
+      ]
+    }
+  },
+  "additionalProperties": true
+}

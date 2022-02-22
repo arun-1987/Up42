@@ -1,0 +1,163 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "properties": {
+    "data": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "displayId": {
+          "type": "string"
+        },
+        "createdAt": {
+          "type": "string"
+        },
+        "updatedAt": {
+          "type": "string"
+        },
+        "createdBy": {
+          "type": "object",
+          "properties": {
+            "id": {
+              "type": "string"
+            },
+            "type": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "id",
+            "type"
+          ]
+        },
+        "updatedBy": {
+          "type": "object",
+          "properties": {
+            "id": {
+              "type": "string"
+            },
+            "type": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "id",
+            "type"
+          ]
+        },
+        "status": {
+          "type": "string"
+        },
+        "name": {
+          "type": "null"
+        },
+        "startedAt": {
+          "type": "null"
+        },
+        "finishedAt": {
+          "type": "null"
+        },
+        "inputs": {
+          "type": "object",
+          "properties": {
+            "nasa-modis:1": {
+              "type": "object",
+              "properties": {
+                "time": {
+                  "type": "string"
+                },
+                "limit": {
+                  "type": "integer"
+                },
+                "zoom_level": {
+                  "type": "integer"
+                },
+                "imagery_layers": {
+                  "type": "array",
+                  "items": [
+                    {
+                      "type": "string"
+                    }
+                  ]
+                },
+                "bbox": {
+                  "type": "array",
+                  "items": [
+                    {
+                      "type": "number"
+                    },
+                    {
+                      "type": "number"
+                    },
+                    {
+                      "type": "number"
+                    },
+                    {
+                      "type": "number"
+                    }
+                  ]
+                }
+              },
+              "required": [
+                "time",
+                "limit",
+                "zoom_level",
+                "imagery_layers",
+                "bbox"
+              ]
+            },
+            "sharpening:1": {
+              "type": "object",
+              "properties": {
+                "strength": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "strength"
+              ]
+            }
+          },
+          "required": [
+            "nasa-modis:1",
+            "sharpening:1"
+          ]
+        },
+        "mode": {
+          "type": "string"
+        },
+        "workflowId": {
+          "type": "string"
+        },
+        "workflowName": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "id",
+        "displayId",
+        "createdAt",
+        "updatedAt",
+        "createdBy",
+        "updatedBy",
+        "status",
+        "name",
+        "startedAt",
+        "finishedAt",
+        "inputs",
+        "mode",
+        "workflowId",
+        "workflowName"
+      ]
+    },
+    "error": {
+      "type": "null"
+    }
+  },
+  "required": [
+    "data",
+    "error"
+  ]
+}

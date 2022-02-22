@@ -1,0 +1,1233 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "properties": {
+    "data": {
+      "type": "array",
+      "items": [
+        {
+          "type": "object",
+          "properties": {
+            "id": {
+              "type": "string"
+            },
+            "displayId": {
+              "type": "string"
+            },
+            "createdAt": {
+              "type": "string"
+            },
+            "updatedAt": {
+              "type": "string"
+            },
+            "createdBy": {
+              "type": "object",
+              "properties": {
+                "id": {
+                  "type": "string"
+                },
+                "type": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "id",
+                "type"
+              ]
+            },
+            "updatedBy": {
+              "type": "object",
+              "properties": {
+                "id": {
+                  "type": "string"
+                },
+                "type": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "id",
+                "type"
+              ]
+            },
+            "name": {
+              "type": "string"
+            },
+            "parentsIds": {
+              "type": "array",
+              "items": {}
+            },
+            "blockName": {
+              "type": "string"
+            },
+            "blockVersionTag": {
+              "type": "string"
+            },
+            "block": {
+              "type": "object",
+              "properties": {
+                "id": {
+                  "type": "string"
+                },
+                "displayId": {
+                  "type": "string"
+                },
+                "createdAt": {
+                  "type": "string"
+                },
+                "updatedAt": {
+                  "type": "string"
+                },
+                "createdBy": {
+                  "type": "object",
+                  "properties": {
+                    "id": {
+                      "type": "string"
+                    },
+                    "type": {
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "id",
+                    "type"
+                  ]
+                },
+                "updatedBy": {
+                  "type": "object",
+                  "properties": {
+                    "id": {
+                      "type": "string"
+                    },
+                    "type": {
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "id",
+                    "type"
+                  ]
+                },
+                "name": {
+                  "type": "string"
+                },
+                "displayName": {
+                  "type": "string"
+                },
+                "description": {
+                  "type": "string"
+                },
+                "containerUrl": {
+                  "type": "string"
+                },
+                "inputCapabilities": {
+                  "type": "array",
+                  "items": {}
+                },
+                "outputCapabilities": {
+                  "type": "array",
+                  "items": {}
+                },
+                "provider": {
+                  "type": "string"
+                },
+                "providerWebsite": {
+                  "type": "string"
+                },
+                "providerLogoUrl": {
+                  "type": "string"
+                },
+                "tags": {
+                  "type": "array",
+                  "items": [
+                    {
+                      "type": "string"
+                    },
+                    {
+                      "type": "string"
+                    },
+                    {
+                      "type": "string"
+                    },
+                    {
+                      "type": "string"
+                    },
+                    {
+                      "type": "string"
+                    },
+                    {
+                      "type": "string"
+                    },
+                    {
+                      "type": "string"
+                    },
+                    {
+                      "type": "string"
+                    },
+                    {
+                      "type": "string"
+                    },
+                    {
+                      "type": "string"
+                    },
+                    {
+                      "type": "string"
+                    },
+                    {
+                      "type": "string"
+                    },
+                    {
+                      "type": "string"
+                    }
+                  ]
+                },
+                "isPublic": {
+                  "type": "boolean"
+                },
+                "isPublicVersion": {
+                  "type": "boolean"
+                },
+                "isValid": {
+                  "type": "boolean"
+                },
+                "isRestricted": {
+                  "type": "boolean"
+                },
+                "isAccessGranted": {
+                  "type": "boolean"
+                },
+                "isCreditPurchaseRequired": {
+                  "type": "boolean"
+                },
+                "isLimitStreamingDataAccess": {
+                  "type": "boolean"
+                },
+                "parameters": {
+                  "type": "object",
+                  "properties": {
+                    "bbox": {
+                      "type": "object",
+                      "properties": {
+                        "type": {
+                          "type": "string"
+                        },
+                        "default": {
+                          "type": "null"
+                        }
+                      },
+                      "required": [
+                        "type",
+                        "default"
+                      ]
+                    },
+                    "time": {
+                      "type": "object",
+                      "properties": {
+                        "type": {
+                          "type": "string"
+                        },
+                        "default": {
+                          "type": "string"
+                        }
+                      },
+                      "required": [
+                        "type",
+                        "default"
+                      ]
+                    },
+                    "limit": {
+                      "type": "object",
+                      "properties": {
+                        "type": {
+                          "type": "string"
+                        },
+                        "default": {
+                          "type": "integer"
+                        },
+                        "minimum": {
+                          "type": "integer"
+                        }
+                      },
+                      "required": [
+                        "type",
+                        "default",
+                        "minimum"
+                      ]
+                    },
+                    "contains": {
+                      "type": "object",
+                      "properties": {
+                        "type": {
+                          "type": "string"
+                        }
+                      },
+                      "required": [
+                        "type"
+                      ]
+                    },
+                    "intersects": {
+                      "type": "object",
+                      "properties": {
+                        "type": {
+                          "type": "string"
+                        }
+                      },
+                      "required": [
+                        "type"
+                      ]
+                    },
+                    "zoom_level": {
+                      "type": "object",
+                      "properties": {
+                        "type": {
+                          "type": "string"
+                        },
+                        "default": {
+                          "type": "integer"
+                        },
+                        "maximum": {
+                          "type": "integer"
+                        },
+                        "minimum": {
+                          "type": "integer"
+                        }
+                      },
+                      "required": [
+                        "type",
+                        "default",
+                        "maximum",
+                        "minimum"
+                      ]
+                    },
+                    "imagery_layers": {
+                      "type": "object",
+                      "properties": {
+                        "type": {
+                          "type": "string"
+                        },
+                        "default": {
+                          "type": "array",
+                          "items": [
+                            {
+                              "type": "string"
+                            }
+                          ]
+                        }
+                      },
+                      "required": [
+                        "type",
+                        "default"
+                      ]
+                    }
+                  },
+                  "required": [
+                    "bbox",
+                    "time",
+                    "limit",
+                    "contains",
+                    "intersects",
+                    "zoom_level",
+                    "imagery_layers"
+                  ]
+                },
+                "type": {
+                  "type": "string"
+                },
+                "isDryRunSupported": {
+                  "type": "boolean"
+                },
+                "version": {
+                  "type": "string"
+                },
+                "metadata": {
+                  "type": "object",
+                  "properties": {
+                    "overview": {
+                      "type": "string"
+                    },
+                    "termsAndConditionsUrl": {
+                      "type": "string"
+                    },
+                    "blockThumbnailUrl": {
+                      "type": "string"
+                    },
+                    "pricingStrategy": {
+                      "type": "object",
+                      "properties": {
+                        "id": {
+                          "type": "string"
+                        },
+                        "displayId": {
+                          "type": "string"
+                        },
+                        "createdAt": {
+                          "type": "string"
+                        },
+                        "updatedAt": {
+                          "type": "string"
+                        },
+                        "createdBy": {
+                          "type": "object",
+                          "properties": {
+                            "id": {
+                              "type": "string"
+                            },
+                            "type": {
+                              "type": "string"
+                            }
+                          },
+                          "required": [
+                            "id",
+                            "type"
+                          ]
+                        },
+                        "updatedBy": {
+                          "type": "object",
+                          "properties": {
+                            "id": {
+                              "type": "string"
+                            },
+                            "type": {
+                              "type": "string"
+                            }
+                          },
+                          "required": [
+                            "id",
+                            "type"
+                          ]
+                        },
+                        "type": {
+                          "type": "string"
+                        },
+                        "credits": {
+                          "type": "number"
+                        }
+                      },
+                      "required": [
+                        "id",
+                        "displayId",
+                        "createdAt",
+                        "updatedAt",
+                        "createdBy",
+                        "updatedBy",
+                        "type",
+                        "credits"
+                      ]
+                    },
+                    "blockPricingStrategy": {
+                      "type": "null"
+                    },
+                    "blockMarketplaceSampleData": {
+                      "type": "array",
+                      "items": [
+                        {
+                          "type": "object",
+                          "properties": {
+                            "id": {
+                              "type": "string"
+                            },
+                            "displayId": {
+                              "type": "string"
+                            },
+                            "createdAt": {
+                              "type": "string"
+                            },
+                            "updatedAt": {
+                              "type": "string"
+                            },
+                            "createdBy": {
+                              "type": "object",
+                              "properties": {
+                                "id": {
+                                  "type": "string"
+                                },
+                                "type": {
+                                  "type": "string"
+                                }
+                              },
+                              "required": [
+                                "id",
+                                "type"
+                              ]
+                            },
+                            "updatedBy": {
+                              "type": "object",
+                              "properties": {
+                                "id": {
+                                  "type": "string"
+                                },
+                                "type": {
+                                  "type": "string"
+                                }
+                              },
+                              "required": [
+                                "id",
+                                "type"
+                              ]
+                            },
+                            "value": {
+                              "type": "string"
+                            },
+                            "type": {
+                              "type": "string"
+                            }
+                          },
+                          "required": [
+                            "id",
+                            "displayId",
+                            "createdAt",
+                            "updatedAt",
+                            "createdBy",
+                            "updatedBy",
+                            "value",
+                            "type"
+                          ]
+                        },
+                        {
+                          "type": "object",
+                          "properties": {
+                            "id": {
+                              "type": "string"
+                            },
+                            "displayId": {
+                              "type": "string"
+                            },
+                            "createdAt": {
+                              "type": "string"
+                            },
+                            "updatedAt": {
+                              "type": "string"
+                            },
+                            "createdBy": {
+                              "type": "object",
+                              "properties": {
+                                "id": {
+                                  "type": "string"
+                                },
+                                "type": {
+                                  "type": "string"
+                                }
+                              },
+                              "required": [
+                                "id",
+                                "type"
+                              ]
+                            },
+                            "updatedBy": {
+                              "type": "object",
+                              "properties": {
+                                "id": {
+                                  "type": "string"
+                                },
+                                "type": {
+                                  "type": "string"
+                                }
+                              },
+                              "required": [
+                                "id",
+                                "type"
+                              ]
+                            },
+                            "value": {
+                              "type": "string"
+                            },
+                            "type": {
+                              "type": "string"
+                            }
+                          },
+                          "required": [
+                            "id",
+                            "displayId",
+                            "createdAt",
+                            "updatedAt",
+                            "createdBy",
+                            "updatedBy",
+                            "value",
+                            "type"
+                          ]
+                        }
+                      ]
+                    }
+                  },
+                  "required": [
+                    "overview",
+                    "termsAndConditionsUrl",
+                    "blockThumbnailUrl",
+                    "pricingStrategy",
+                    "blockPricingStrategy",
+                    "blockMarketplaceSampleData"
+                  ]
+                },
+                "machineName": {
+                  "type": "string"
+                },
+                "manifestVersion": {
+                  "type": "integer"
+                },
+                "capabilities": {
+                  "type": "object",
+                  "properties": {
+                    "input": {
+                      "type": "object"
+                    },
+                    "output": {
+                      "type": "object",
+                      "properties": {
+                        "raster": {
+                          "type": "object",
+                          "properties": {
+                            "custom": {
+                              "type": "object",
+                              "properties": {
+                                "imagery_layers": {
+                                  "type": "string"
+                                }
+                              },
+                              "required": [
+                                "imagery_layers"
+                              ]
+                            },
+                            "up42_standard": {
+                              "type": "object",
+                              "properties": {
+                                "dtype": {
+                                  "type": "string"
+                                },
+                                "format": {
+                                  "type": "string"
+                                },
+                                "resolution": {
+                                  "type": "integer"
+                                }
+                              },
+                              "required": [
+                                "dtype",
+                                "format",
+                                "resolution"
+                              ]
+                            }
+                          },
+                          "required": [
+                            "custom",
+                            "up42_standard"
+                          ]
+                        }
+                      },
+                      "required": [
+                        "raster"
+                      ]
+                    }
+                  },
+                  "required": [
+                    "input",
+                    "output"
+                  ]
+                }
+              },
+              "required": [
+                "id",
+                "displayId",
+                "createdAt",
+                "updatedAt",
+                "createdBy",
+                "updatedBy",
+                "name",
+                "displayName",
+                "description",
+                "containerUrl",
+                "inputCapabilities",
+                "outputCapabilities",
+                "provider",
+                "providerWebsite",
+                "providerLogoUrl",
+                "tags",
+                "isPublic",
+                "isPublicVersion",
+                "isValid",
+                "isRestricted",
+                "isAccessGranted",
+                "isCreditPurchaseRequired",
+                "isLimitStreamingDataAccess",
+                "parameters",
+                "type",
+                "isDryRunSupported",
+                "version",
+                "metadata",
+                "machineName",
+                "manifestVersion",
+                "capabilities"
+              ]
+            },
+            "environment": {
+              "type": "null"
+            }
+          },
+          "required": [
+            "id",
+            "displayId",
+            "createdAt",
+            "updatedAt",
+            "createdBy",
+            "updatedBy",
+            "name",
+            "parentsIds",
+            "blockName",
+            "blockVersionTag",
+            "block",
+            "environment"
+          ]
+        },
+        {
+          "type": "object",
+          "properties": {
+            "id": {
+              "type": "string"
+            },
+            "displayId": {
+              "type": "string"
+            },
+            "createdAt": {
+              "type": "string"
+            },
+            "updatedAt": {
+              "type": "string"
+            },
+            "createdBy": {
+              "type": "object",
+              "properties": {
+                "id": {
+                  "type": "string"
+                },
+                "type": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "id",
+                "type"
+              ]
+            },
+            "updatedBy": {
+              "type": "object",
+              "properties": {
+                "id": {
+                  "type": "string"
+                },
+                "type": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "id",
+                "type"
+              ]
+            },
+            "name": {
+              "type": "string"
+            },
+            "parentsIds": {
+              "type": "array",
+              "items": [
+                {
+                  "type": "string"
+                }
+              ]
+            },
+            "blockName": {
+              "type": "string"
+            },
+            "blockVersionTag": {
+              "type": "string"
+            },
+            "block": {
+              "type": "object",
+              "properties": {
+                "id": {
+                  "type": "string"
+                },
+                "displayId": {
+                  "type": "string"
+                },
+                "createdAt": {
+                  "type": "string"
+                },
+                "updatedAt": {
+                  "type": "string"
+                },
+                "createdBy": {
+                  "type": "object",
+                  "properties": {
+                    "id": {
+                      "type": "string"
+                    },
+                    "type": {
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "id",
+                    "type"
+                  ]
+                },
+                "updatedBy": {
+                  "type": "object",
+                  "properties": {
+                    "id": {
+                      "type": "string"
+                    },
+                    "type": {
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "id",
+                    "type"
+                  ]
+                },
+                "name": {
+                  "type": "string"
+                },
+                "displayName": {
+                  "type": "string"
+                },
+                "description": {
+                  "type": "string"
+                },
+                "containerUrl": {
+                  "type": "string"
+                },
+                "inputCapabilities": {
+                  "type": "array",
+                  "items": {}
+                },
+                "outputCapabilities": {
+                  "type": "array",
+                  "items": {}
+                },
+                "provider": {
+                  "type": "string"
+                },
+                "providerWebsite": {
+                  "type": "string"
+                },
+                "providerLogoUrl": {
+                  "type": "string"
+                },
+                "tags": {
+                  "type": "array",
+                  "items": [
+                    {
+                      "type": "string"
+                    },
+                    {
+                      "type": "string"
+                    },
+                    {
+                      "type": "string"
+                    },
+                    {
+                      "type": "string"
+                    },
+                    {
+                      "type": "string"
+                    },
+                    {
+                      "type": "string"
+                    },
+                    {
+                      "type": "string"
+                    },
+                    {
+                      "type": "string"
+                    },
+                    {
+                      "type": "string"
+                    },
+                    {
+                      "type": "string"
+                    }
+                  ]
+                },
+                "isPublic": {
+                  "type": "boolean"
+                },
+                "isPublicVersion": {
+                  "type": "boolean"
+                },
+                "isValid": {
+                  "type": "boolean"
+                },
+                "isRestricted": {
+                  "type": "boolean"
+                },
+                "isAccessGranted": {
+                  "type": "boolean"
+                },
+                "isCreditPurchaseRequired": {
+                  "type": "boolean"
+                },
+                "isLimitStreamingDataAccess": {
+                  "type": "boolean"
+                },
+                "parameters": {
+                  "type": "object",
+                  "properties": {
+                    "strength": {
+                      "type": "object",
+                      "properties": {
+                        "type": {
+                          "type": "string"
+                        },
+                        "default": {
+                          "type": "string"
+                        }
+                      },
+                      "required": [
+                        "type",
+                        "default"
+                      ]
+                    }
+                  },
+                  "required": [
+                    "strength"
+                  ]
+                },
+                "type": {
+                  "type": "string"
+                },
+                "isDryRunSupported": {
+                  "type": "boolean"
+                },
+                "version": {
+                  "type": "string"
+                },
+                "metadata": {
+                  "type": "object",
+                  "properties": {
+                    "overview": {
+                      "type": "string"
+                    },
+                    "termsAndConditionsUrl": {
+                      "type": "string"
+                    },
+                    "blockThumbnailUrl": {
+                      "type": "string"
+                    },
+                    "pricingStrategy": {
+                      "type": "object",
+                      "properties": {
+                        "id": {
+                          "type": "string"
+                        },
+                        "displayId": {
+                          "type": "string"
+                        },
+                        "createdAt": {
+                          "type": "string"
+                        },
+                        "updatedAt": {
+                          "type": "string"
+                        },
+                        "createdBy": {
+                          "type": "object",
+                          "properties": {
+                            "id": {
+                              "type": "string"
+                            },
+                            "type": {
+                              "type": "string"
+                            }
+                          },
+                          "required": [
+                            "id",
+                            "type"
+                          ]
+                        },
+                        "updatedBy": {
+                          "type": "object",
+                          "properties": {
+                            "id": {
+                              "type": "string"
+                            },
+                            "type": {
+                              "type": "string"
+                            }
+                          },
+                          "required": [
+                            "id",
+                            "type"
+                          ]
+                        },
+                        "type": {
+                          "type": "string"
+                        },
+                        "credits": {
+                          "type": "number"
+                        }
+                      },
+                      "required": [
+                        "id",
+                        "displayId",
+                        "createdAt",
+                        "updatedAt",
+                        "createdBy",
+                        "updatedBy",
+                        "type",
+                        "credits"
+                      ]
+                    },
+                    "blockPricingStrategy": {
+                      "type": "object",
+                      "properties": {
+                        "name": {
+                          "type": "string"
+                        },
+                        "unit": {
+                          "type": "string"
+                        },
+                        "direction": {
+                          "type": "string"
+                        },
+                        "credits": {
+                          "type": "integer"
+                        }
+                      },
+                      "required": [
+                        "name",
+                        "unit",
+                        "direction",
+                        "credits"
+                      ]
+                    },
+                    "blockMarketplaceSampleData": {
+                      "type": "array",
+                      "items": [
+                        {
+                          "type": "object",
+                          "properties": {
+                            "id": {
+                              "type": "string"
+                            },
+                            "displayId": {
+                              "type": "string"
+                            },
+                            "createdAt": {
+                              "type": "string"
+                            },
+                            "updatedAt": {
+                              "type": "string"
+                            },
+                            "createdBy": {
+                              "type": "object",
+                              "properties": {
+                                "id": {
+                                  "type": "string"
+                                },
+                                "type": {
+                                  "type": "string"
+                                }
+                              },
+                              "required": [
+                                "id",
+                                "type"
+                              ]
+                            },
+                            "updatedBy": {
+                              "type": "object",
+                              "properties": {
+                                "id": {
+                                  "type": "string"
+                                },
+                                "type": {
+                                  "type": "string"
+                                }
+                              },
+                              "required": [
+                                "id",
+                                "type"
+                              ]
+                            },
+                            "value": {
+                              "type": "string"
+                            },
+                            "type": {
+                              "type": "string"
+                            }
+                          },
+                          "required": [
+                            "id",
+                            "displayId",
+                            "createdAt",
+                            "updatedAt",
+                            "createdBy",
+                            "updatedBy",
+                            "value",
+                            "type"
+                          ]
+                        }
+                      ]
+                    }
+                  },
+                  "required": [
+                    "overview",
+                    "termsAndConditionsUrl",
+                    "blockThumbnailUrl",
+                    "pricingStrategy",
+                    "blockPricingStrategy",
+                    "blockMarketplaceSampleData"
+                  ]
+                },
+                "machineName": {
+                  "type": "string"
+                },
+                "manifestVersion": {
+                  "type": "integer"
+                },
+                "capabilities": {
+                  "type": "object",
+                  "properties": {
+                    "input": {
+                      "type": "object",
+                      "properties": {
+                        "raster": {
+                          "type": "object",
+                          "properties": {
+                            "up42_standard": {
+                              "type": "object",
+                              "properties": {
+                                "format": {
+                                  "type": "string"
+                                }
+                              },
+                              "required": [
+                                "format"
+                              ]
+                            }
+                          },
+                          "required": [
+                            "up42_standard"
+                          ]
+                        }
+                      },
+                      "required": [
+                        "raster"
+                      ]
+                    },
+                    "output": {
+                      "type": "object",
+                      "properties": {
+                        "raster": {
+                          "type": "object",
+                          "properties": {
+                            "up42_standard": {
+                              "type": "object",
+                              "properties": {
+                                "bands": {
+                                  "type": "string"
+                                },
+                                "dtype": {
+                                  "type": "string"
+                                },
+                                "format": {
+                                  "type": "string"
+                                },
+                                "sensor": {
+                                  "type": "string"
+                                },
+                                "resolution": {
+                                  "type": "string"
+                                },
+                                "processing_level": {
+                                  "type": "string"
+                                }
+                              },
+                              "required": [
+                                "bands",
+                                "dtype",
+                                "format",
+                                "sensor",
+                                "resolution",
+                                "processing_level"
+                              ]
+                            }
+                          },
+                          "required": [
+                            "up42_standard"
+                          ]
+                        }
+                      },
+                      "required": [
+                        "raster"
+                      ]
+                    }
+                  },
+                  "required": [
+                    "input",
+                    "output"
+                  ]
+                }
+              },
+              "required": [
+                "id",
+                "displayId",
+                "createdAt",
+                "updatedAt",
+                "createdBy",
+                "updatedBy",
+                "name",
+                "displayName",
+                "description",
+                "containerUrl",
+                "inputCapabilities",
+                "outputCapabilities",
+                "provider",
+                "providerWebsite",
+                "providerLogoUrl",
+                "tags",
+                "isPublic",
+                "isPublicVersion",
+                "isValid",
+                "isRestricted",
+                "isAccessGranted",
+                "isCreditPurchaseRequired",
+                "isLimitStreamingDataAccess",
+                "parameters",
+                "type",
+                "isDryRunSupported",
+                "version",
+                "metadata",
+                "machineName",
+                "manifestVersion",
+                "capabilities"
+              ]
+            },
+            "environment": {
+              "type": "null"
+            }
+          },
+          "required": [
+            "id",
+            "displayId",
+            "createdAt",
+            "updatedAt",
+            "createdBy",
+            "updatedBy",
+            "name",
+            "parentsIds",
+            "blockName",
+            "blockVersionTag",
+            "block",
+            "environment"
+          ]
+        }
+      ]
+    },
+    "error": {
+      "type": "null"
+    }
+  },
+  "required": [
+    "data",
+    "error"
+  ]
+}

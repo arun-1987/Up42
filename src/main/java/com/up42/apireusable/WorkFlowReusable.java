@@ -1,7 +1,10 @@
 package com.up42.apireusable;
 
+import io.qameta.allure.Step;
+import io.restassured.module.jsv.JsonSchemaValidator;
 import io.restassured.response.Response;
 import io.restassured.specification.RequestSpecification;
+import org.hamcrest.MatcherAssert;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -9,7 +12,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.concurrent.Callable;
 import java.util.concurrent.TimeUnit;
-import static org.hamcrest.Matchers.*;
+
 import static java.util.concurrent.TimeUnit.MINUTES;
 import static org.awaitility.Awaitility.*;
 import static org.assertj.core.api.Assertions.*;
@@ -17,10 +20,7 @@ import static org.hamcrest.Matchers.is;
 
 public class WorkFlowReusable {
 
-    /**
-     * Function that returns access token based on project id and api key provided
-     * @return
-     */
+
     public String getAccessToken(String projectId,String apiKey){
         RequestSpecification requestSpec = RestAssuredExtensions.getRequestSpecification();
         RestAssuredExtensions.setEndPoint("/oauth/token");
@@ -71,15 +71,24 @@ public class WorkFlowReusable {
        return RestAssuredExtensions.getResponse(requestSpec, "POST");
     }
 
-    public void createWorkFlowTasks(String workFlowId){
+    public Response createWorkFlowTasks(String workFlowId){
         String accessToken = getAccessToken(Constants.PROJECTID,Constants.APIKEY);
         RequestSpecification requestSpec = RestAssuredExtensions.getRequestSpecification();
         RestAssuredExtensions.setEndPoint("/projects/"+Constants.PROJECTID+"/workflows/"+workFlowId+"/tasks");
         requestSpec.header("Authorization", "Bearer "+accessToken)
                 .header("Content-Type","application/json")
                 .body(TestData.getWorkFlowTaskData());
-        Response response = RestAssuredExtensions.getResponse(requestSpec, "POST");
-        assertThat(response.getStatusCode()).isEqualTo(200);
+        return RestAssuredExtensions.getResponse(requestSpec, "POST");
+
+    }
+
+
+    public void verifyCreateTaskResponse(Response response){
+        response.then().assertThat().statusCode(200)
+                .body(JsonSchemaValidator.matchesJsonSchemaInClasspath("Create_Task_Schema.json"));
+        assertThat(response.path("data.createdBy").toString().equalsIgnoreCase(Constants.PROJECTID));
+        assertThat(response.path("data.updatedBy").toString().equalsIgnoreCase(Constants.PROJECTID));
+        assertThat(response.body().jsonPath().getList("data.id").size()==2);
     }
 
 
@@ -93,18 +102,14 @@ public class WorkFlowReusable {
     }
 
 
-    public List<String> createAndRunJob(String workFlowId){
-        List<String> jobId = new ArrayList<>();
+    public Response createAndRunJob(String workFlowId){
         String accessToken = getAccessToken(Constants.PROJECTID,Constants.APIKEY);
         RequestSpecification requestSpec = RestAssuredExtensions.getRequestSpecification();
         RestAssuredExtensions.setEndPoint("/projects/"+Constants.PROJECTID+"/workflows/"+workFlowId+"/jobs");
         requestSpec.header("Authorization", "Bearer "+accessToken)
                 .header("Content-Type","application/json")
                 .body(TestData.getWorkFlowConfigData());
-        Response response = RestAssuredExtensions.getResponse(requestSpec, "POST");
-        jobId.add(response.path("data.id"));
-        assertThat(response.getStatusCode()).isEqualTo(200);
-        return jobId;
+        return   RestAssuredExtensions.getResponse(requestSpec, "POST");
     }
 
     private Callable getJobStatusAndValidate() {
