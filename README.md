@@ -13,14 +13,17 @@ ReusableComponents - WorkFlowReusable
 
 ### Usage
 To run in local
-  maven test
+  mvn clean test -DsuiteXmlFile=SmokeSuite.xml
+  mvn clean test -DsuiteXmlFile=E2ESuite.xml
 
 ### Tools Used
 ```
 TestNg - Test Runner
+Maven - Build
 RestAssured - Api Testing Tool
 Awaitility - Async wait
 AssertJ - Assertion
+AllureReport - Reporting
 ```
 ### Language
 Java
